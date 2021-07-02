@@ -5,7 +5,9 @@ Here we develop and test Neural Network/Machine Learning algorithms against a da
 # Results
 
 Our target variable in the dataset is the "IS_SUCCESSFUL" column, which is narrowed down to either 1 or 0, and the remaining columns are trained/tested in our models against this, once also numerically encoded; such as organization type, income amount, etc. We also graph a density plot to determine which application/classification types to group together by their count, so they don't create bias/disrupt the accuracy once run through various models:
+
 ![image](https://user-images.githubusercontent.com/79726572/124324983-e07c2b80-db51-11eb-9a04-b2f9fac4ab3b.png)
+
 This tells us that the "T" application types with counts less than 500, can be binned into one unique value (simply "other") so they are fairly accounted for, and can be updated on our dataset:
 ```
 replace_application = list(application_counts[application_counts < 500].index)
